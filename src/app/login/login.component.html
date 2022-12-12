@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Login Form | CodingLab</title> -->
+    
+  </head>
+  <body>
+
+    <!----<div><h1>{{aim}}</h1></div> -->
+    
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Login Form</span></div>
+        <form (ngSubmit)="login()">
+          <div class="row">
+            <label  for="username"><b>Account Number</b></label>
+            <i></i>
+            <input name="acno" [(ngModel)]="acno" id="acid" type="text" [placeholder]="data" required>
+          </div> <br>
+          <div class="row">
+           
+            <label  for="username"><b>Password</b></label>
+            <i></i>
+            <input name="psw"[(ngModel)]="psw"  id="pid"type="password" placeholder="enter password" required>
+          </div> <br>
+          <!--<div class="pass"><a href="#">Forgot password?</a></div> -->
+          <div class="row button">
+            <input  type="submit" value="Login">
+          </div>
+          <div class="signup-link">Not a member? <a routerLink="register">Signup now</a></div>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<body>
+  <div class="table-title">
+  <h3>Transaction History</h3>
+  </div>
+  <table class="table-fill">
+  <thead>
+  <tr>
+  <th class="text-left">Type</th>
+  <th class="text-left">Amount</th>
+  </tr>
+  </thead>
+  <tbody class="table-hover">
+  <tr *ngFor="let i of transaction">
+  <td class="text-left">{{i.type}}</td>
+  <td class="text-left">{{i.amount}}</td>
+  </tr>
+  
+  
+  </tbody>
+  </table>
+    
+  
+    </body>
+
+    
+    

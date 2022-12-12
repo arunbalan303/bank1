@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form (ngSubmit)="register()"[formGroup]="registerForm">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details" name="uname" [(ngModel)]="uname">User Name</span>
+            <input type="text" placeholder="enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Account Number</span>
+            <input type="text" name="acno" [(ngModel)]="acno"placeholder="enter your account number" required>
+          </div>
+          
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" name="psw"[(ngModel)]="psw" placeholder="enter your password" required>
+          </div>
+          
+          
+        </div>
+        
+        <div class="button">
+          <input type="submit"  value="Signup">
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

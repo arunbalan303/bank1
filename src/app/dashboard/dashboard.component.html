@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+ 
+  <style>
+ 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: sans-serif;
+}
+
+body{
+      height: 100vh;
+      background:transparent;
+}
+
+.wrapper{
+  max-width: 450px;
+  width: 100%;
+  margin: 30px auto 0;
+  padding: 10px;
+
+}
+
+.wrapper .form_container{
+  background: #fff;
+  padding: 30px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+.heading{
+  background: #015a80;
+  margin: -30px;
+  text-align: center;
+  color: white;
+  font-size: 19px;
+  margin-bottom: 35px;
+  padding: 10px;
+  
+  
+}
+.wrapper .form_container .form_item{
+  margin-bottom: 25px;
+}
+
+.form_wrap.fullname,
+.form_wrap.select_box{
+  display: flex;
+}
+
+.form_wrap.fullname .form_item,
+.form_wrap.select_box .form_item{
+  width: 50%;
+}
+
+.form_wrap.fullname .form_item:first-child,
+.form_wrap.select_box .form_item:first-child{
+  margin-right: 4%;
+}
+
+.wrapper .form_container .form_item label{
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form_item input[type="text"],
+.form_item select{
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #dadce0;
+  border-radius: 3px;
+}
+
+.form_item input[type="text"]:focus{
+  border-color: #6271f0;
+}
+
+.btn input[type="submit"]{
+  background: #1598d4;
+  border: 1px solid #1598d4;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #fff;
+}
+#psw{
+    width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #dadce0;
+  border-radius: 3px;
+}
+#psw1{
+    width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #dadce0;
+  border-radius: 3px;
+}
+h1{
+	text-align: center;
+}
+p{
+	text-align: center;
+	
+}
+  </style>
+</head>
+<body>
+ 
+	<div class="wrapper">
+		<h1 >Welcome &nbsp;{{user}}</h1> <br>
+		<!----this used to 1 back and redirect-->
+		<p><a id="a1" routerLink="/transaction">View Transaction History</a></p> <br>
+		
+		<div class="form_container">
+			
+		  <form  (ngSubmit)="deposit()">
+        <div class="heading">
+        <h2>Deposit</h2>
+      </div>
+			<div class="form_wrap fullname">
+				<div class="form_item">
+					<label>Account Number</label>
+					<input type="text"[(ngModel)]="acno" id="acno"name="acno" placeholder="enter account number">
+					<div class="error" id="fname"></div>  
+				</div>
+				<div class="form_item">
+					<label>Password</label>
+					<input type="password" id="psw" [(ngModel)]="psw" name="psw"placeholder="enter password">
+					<div class="error" id="lname"></div>  
+				</div>
+			</div>
+			<div class="form_wrap">
+				<div class="form_item">
+					<label>Amount</label>
+					<input id="amnt" [(ngModel)]="amnt" name="am"type="text"placeholder="enter the ammount">
+					<div class="error" id="email"></div>  
+				</div>
+			</div>
+			<div class="form_wrap">
+				
+			</div>
+			<div class="form_wrap select_box">
+				<div class="form_item">
+					
+					<div class="error" id="city"></div>  
+				</div>
+				<div class="form_item">
+					
+					
+				</div>
+			</div>
+
+			<div class="btn">
+			  <input  type="submit" value="Deposit">
+			</div>
+		  </form>
+		</div>
+	  </div>
+      <!------------------------hhhhhhhhhhhhhhhhhhhhhh-->
+      <div class="wrapper">
+
+		
+		<div class="form_container">
+		  <form (ngSubmit)="withdraw()">
+        <div class="heading">
+        <h2>Withdraw</h2>
+      </div>
+			<div class="form_wrap fullname">
+				<div class="form_item">
+					<label>Account Number</label>
+					<input type="text" id="acno1"[(ngModel)]="acno1" name="ac1" placeholder="enter account number">
+					<div class="error" id="fname"></div>  
+				</div>
+				
+                <div class="form_item">
+					<label>Password</label>
+					<input type="password" id="psw1" [(ngModel)]="psw1" name="psw1"placeholder="enter password">
+					<div class="error" id="lname"></div>  
+				</div>
+			</div>
+			<div class="form_wrap">
+				<div class="form_item">
+					<label>Amount</label>
+					<input id="amnt1" [(ngModel)]="amnt1" name="am1"type="text">
+					<div class="error" id="email"></div>  
+				</div>
+			</div>
+			<div class="form_wrap">
+				
+			</div>
+			<div class="form_wrap select_box">
+				<div class="form_item">
+					
+					<div class="error" id="city"></div>  
+				</div>
+				<div class="form_item">
+					
+					
+				</div>
+			</div>
+
+			<div class="btn">
+			  <input type="submit" value="Withdraw">
+			</div>
+		  </form>
+		</div>
+	  </div>
+  
+</body>
+</html>
